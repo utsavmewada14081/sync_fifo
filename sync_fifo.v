@@ -44,6 +44,6 @@ DATA_WIDTH = 32)(
   //asserting empty flag
   assign empty = (read_pointer == write_pointer);
   //asserting full flag
-  assign full = (read_pointer == {~write_pointer[3], write_pointer[2:0]});
+  assign full = (read_pointer == {~write_pointer[FIFO_DEPTH_LOG], write_pointer[FIFO_DEPTH_LOG-1:0]});
   
 endmodule
